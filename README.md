@@ -11,5 +11,5 @@ Remote Directory contains yanfly.moe plugins online directory.
 Usage :
 - First, fill directories with your preferences ;
 - Click "Check your update", it will check your local directory and remote directory and compare file's version ;
-- Previous step will try to guess which files need to be upgraded, you can enable/diable update by changing checkbox state ;
+- Previous step will try to guess which files need to be upgraded, you can enable/disable update by changing checkbox state ;
 - "Update selected" will backup and update all selected files.
