@@ -1,0 +1,57 @@
+﻿<Window x:Class="yanfly_updater.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:yanfly_updater"
+		mc:Ignorable="d"
+		Title="MainWindow" Height="450" Width="800">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<Grid Grid.Row="0">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="auto"/>
+				<ColumnDefinition/>
+				<ColumnDefinition Width="auto"/>
+			</Grid.ColumnDefinitions>
+
+			<Label Grid.Row="0" Grid.Column="0" Content="Local Directory" />
+			<Label Grid.Row="1" Grid.Column="0" Content="Backup Directory" />
+			<Label Grid.Row="2" Grid.Column="0" Content="Remote Directory" />
+			<TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Local}" />
+			<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Backup}" />
+			<TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Remote}" />
+		</Grid>
+
+		<Grid Grid.Row="1" Grid.Column="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+
+			<Button Grid.Row="0" Grid.Column="0"
+				Content="Check for update"
+				Command="{Binding CheckForUpdate}">
+			</Button>
+			<Button Grid.Row="0" Grid.Column="1"
+				Content="Update selected"
+				Command="{Binding UpdateSelected}">
+			</Button>
+		</Grid>
+
+		<DataGrid Grid.Row="2" Grid.Column="0"
+			ItemsSource="{Binding Dict.Values}">
+		</DataGrid>
+	</Grid>
+</Window>
