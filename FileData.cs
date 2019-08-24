@@ -80,11 +80,9 @@ namespace yanfly_updater
 				return;
 			}
 
-			double local;
-			bool parse_local_result = double.TryParse( LocalVersion, NumberStyles.Currency, CultureInfo.InvariantCulture, out local );
+			bool parse_local_result = double.TryParse( LocalVersion, NumberStyles.Currency, CultureInfo.InvariantCulture, out double local );
 
-			double remote;
-			bool parse_remote_result = double.TryParse( RemoteVersion, NumberStyles.Currency, CultureInfo.InvariantCulture, out remote );
+			bool parse_remote_result = double.TryParse( RemoteVersion, NumberStyles.Currency, CultureInfo.InvariantCulture, out double remote );
 
 			if( parse_local_result && parse_remote_result )
 			{

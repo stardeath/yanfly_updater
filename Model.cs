@@ -258,7 +258,17 @@ namespace yanfly_updater
 
 					if( File.Exists( src ) )
 					{
-						Directory.Move( src, dst );
+						if( File.Exists( dst ) )
+						{
+							string date = DateTime.Now.ToString( "u" );
+							new_name = name_wo_ext + "_" + element.Value.LocalVersion + "_" + date + ext;
+							dst = Path.Combine( Backup, new_name );
+							Directory.Move( src, dst );
+						}
+						else
+						{
+							Directory.Move( src, dst );
+						}
 					}
 
 					string content = m_DLManager.Get( "", element.Value.Name );
